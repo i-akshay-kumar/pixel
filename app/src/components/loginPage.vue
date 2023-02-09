@@ -119,8 +119,14 @@ export default {
         width: 100vw;
         height: 100vh;
         background-image: url("../assets/banner2.jpg");
+        /* background-image: url("../assets/bg2.webp"); */
+        /* background-image: url("../assets/b4.jpg"); */
+        /* background-repeat: no-repeat; */
+         /* background-size: 100%; */
       }
-      
+      /* .bg-white{
+        --bs-bg-opacity: 0.1;
+      } */
       .btn-rounded{
           border-radius: 30px;
       }

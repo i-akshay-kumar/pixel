@@ -243,7 +243,11 @@ export default {
 .body-container {
   width: 100vw;
   background-image: url("../assets/banner2.jpg");
+  /* background-image: url("../assets/bg2.webp"); */
 }
+/* .bg-white{
+        --bs-bg-opacity: 0.1;
+      } */
 .btn-rounded {
   border-radius: 30px;
 }
@@ -252,7 +256,7 @@ export default {
   color: white;
 }
 .text-register-now {
-  color: black ;
+  color: black;
 }
 .alert-message-container{
  position: absolute;
