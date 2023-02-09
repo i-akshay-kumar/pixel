@@ -13,7 +13,7 @@ export const store = new Vuex.Store({
             greet : false , 
             signup : true ,
             login : true , 
-            home : false  
+            filter : false  
         }
     }, 
 
