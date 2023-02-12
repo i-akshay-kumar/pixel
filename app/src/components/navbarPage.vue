@@ -76,7 +76,9 @@ export default {
       background-color: #111;
       color: white;
     }
-
+    .navbar-toggler{
+      background-color: #ebebeb;
+    }
     a{
       color: white;
     }
