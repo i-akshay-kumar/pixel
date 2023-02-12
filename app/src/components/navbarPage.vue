@@ -50,7 +50,7 @@ export default {
       items.login = true;
       items.signup = true;
       items.logout = false;
-      items.home = false;
+      items.filter = false;
     },
 
     logout(){
@@ -73,12 +73,19 @@ export default {
     }
 
     .navbar-default{
-      background-color: #5C3ACC;
+      background-color: #111;
       color: white;
-      border-bottom: 1px solid #8e77da;
     }
 
     a{
       color: white;
+    }
+
+    a:hover{
+      color: #ebebeb;
+    }
+
+    a:visited{
+      color: #ebebeb;
     }
 </style>

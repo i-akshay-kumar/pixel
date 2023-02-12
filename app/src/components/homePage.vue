@@ -2,27 +2,31 @@
   <div class="homepage-container">
     <div class="container">
       <div action="" class="search-bar">
+        <button type="submit">
+          <img
+            src="../assets/search-button.png"
+            alt="search"
+            @click="search"
+          />
+        </button>
         <input
           type="text"
           placeholder="Search Image"
           v-model="searchTerm"
           @keyup.enter="search"
         />
-        <button type="submit">
-          <img src="../assets/search.png" alt="search" @click="search" />
-        </button>
       </div>
     </div>
 
     <div class="image-gallery" v-if="!disableDefaultGallery">
       <div v-for="item in randomImageArr" :key="item.id">
-        <img :src="`${item.urls.thumb}`" alt="" />
+        <img :src="`${item.urls.full}`" alt="" />
       </div>
     </div>
 
     <div class="image-gallery">
       <div v-for="item in targetImageArr" :key="item.id">
-        <img :src="`${item.urls.thumb}`" alt="" />
+        <img :src="`${item.urls.full}`" alt="" />
       </div>
     </div>
   </div>
@@ -44,7 +48,7 @@ export default {
 
   mounted() {
     Axios.get(
-      "https://api.unsplash.com/photos?client_id=h4WpGWxUMzW-9D5QaGl2FshKe8us_qBLRMwOy6Nj_cc"
+      "https://api.unsplash.com/photos?page=5&per_page=30&client_id=h4WpGWxUMzW-9D5QaGl2FshKe8us_qBLRMwOy6Nj_cc"
     ).then(
       (res) => {
         console.log("image response", res);
@@ -82,7 +86,6 @@ export default {
 </script>
 
 <style scoped>
-
 .container {
   width: 90%;
   padding: 5rem 0 2rem;
@@ -101,7 +104,6 @@ export default {
   display: flex;
   align-items: center;
   border-radius: 60px;
-  padding: 5px 20px;
   backdrop-filter: blur(4px) saturate(180%);
   border: 1px solid black;
 }
@@ -121,15 +123,15 @@ export default {
 }
 
 .search-bar button img {
-  width: 25px;
+  width: 1.4rem;
 }
 
 .search-bar button {
   border: 0;
   border-radius: 50%;
-  width: 3.8rem;
-  height: 3.8rem;
-  background: #58629b;
+  width: 4.1rem;
+  height: 4.1rem;
+  /* background: #58629b; */
   cursor: pointer;
 }
 
@@ -139,19 +141,10 @@ export default {
   text-align: center;
   flex-direction: row;
 }
-.search-button {
-  padding: 0.7rem 2rem;
-  background-color: #5c3acc;
-  color: white;
-  border-radius: 0 0.5rem 0.5rem 0;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
 
 @media only screen and (max-width: 600px) {
-  .container{
-  padding: 5rem 0 2rem;
+  .container {
+    padding: 5rem 0 2rem;
   }
   .search-bar input {
     font-size: 16px;
@@ -163,17 +156,6 @@ export default {
   }
 }
 
-.search-button:hover {
-  background-color: #5c3acc;
-}
-
-button {
-  background-color: #5c3acc;
-}
-
-button:hover {
-  background-color: #6f4fd5;
-}
 .image-gallery {
   columns: 4;
   column-gap: 5px;

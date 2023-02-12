@@ -242,17 +242,14 @@ export default {
 <style scoped>
 .body-container {
   width: 100vw;
-  background-image: url("../assets/banner2.jpg");
-  /* background-image: url("../assets/bg2.webp"); */
+  background-color: #ebebeb;
+
 }
-/* .bg-white{
-        --bs-bg-opacity: 0.1;
-      } */
 .btn-rounded {
   border-radius: 30px;
 }
 .btn-register-user {
-  background-image: linear-gradient(166deg, rgb(242, 40, 118) 0%, rgb(148, 45, 217) 100%);
+  background-color: #111;
   color: white;
 }
 .text-register-now {
