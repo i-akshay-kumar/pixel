@@ -100,12 +100,13 @@ export default {
 .search-bar {
   width: 100%;
   max-width: 700px;
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2); */
+  background-color: #fdf7f7 ;
   display: flex;
   align-items: center;
   border-radius: 60px;
   backdrop-filter: blur(4px) saturate(180%);
-  border: 1px solid black;
+  border: 1px solid #ebebeb;
 }
 
 .search-bar input {
@@ -131,7 +132,7 @@ export default {
   border-radius: 50%;
   width: 4.1rem;
   height: 4.1rem;
-  /* background: #58629b; */
+  background-color: #fdf7f7 ;
   cursor: pointer;
 }
 
