@@ -19,14 +19,24 @@
     </div>
 
     <div class="image-gallery" v-if="!disableDefaultGallery">
-      <div v-for="item in randomImageArr" :key="item.id">
-        <img :src="`${item.urls.full}`" alt="" />
+      <div v-for="item in randomImageArr" :key="item.id" >
+        <div class="image-wrapper">
+          <img :src="`${item.urls.full}`" alt=""  />
+          <div class="overlay">
+            <div class="text"><img src="../assets/heart.png" alt="">{{item.likes}}</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="image-gallery">
       <div v-for="item in targetImageArr" :key="item.id">
-        <img :src="`${item.urls.full}`" alt="" />
+        <div class="image-wrapper">
+          <img :src="`${item.urls.full}`" alt="" />
+          <div class="overlay">
+            <div class="text"><img src="../assets/heart.png" alt="">{{item.likes}}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -164,11 +174,54 @@ export default {
   margin: 0 auto;
 }
 
-.image-gallery img {
+/* .image-gallery img {
   width: 100%;
   margin: 0;
   padding: 5px;
   border-radius: 10%;
+} */
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+  border-radius: 10%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-radius: 10%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.text {
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0.3rem;
+  padding: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.overlay img{
+  margin-left: 5px;
+  width: 10%;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 1;
 }
 
 @media screen and (min-width: 50px) and (max-width: 1000px) {
@@ -188,4 +241,6 @@ export default {
     columns: 1;
   }
 }
+
+
 </style>
